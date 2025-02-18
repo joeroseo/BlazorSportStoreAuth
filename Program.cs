@@ -15,7 +15,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 // Define the API Base URL
 //var apiBaseUrl = "http://localhost:5000/";
-var apiBaseUrl = "http://mysqlmachine.database.windows.net/";
+var apiBaseUrl = "https://mysqlmachine.database.windows.net/";
 
 builder.Services.AddSingleton(new ApiSettings { BaseUrl = apiBaseUrl });
 

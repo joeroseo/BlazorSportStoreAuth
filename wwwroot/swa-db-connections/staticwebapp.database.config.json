@@ -5,7 +5,8 @@
     "connection-string": "Server=tcp:mysqlmachine.database.windows.net,1433;Initial Catalog=BlazorSportsStore;Persist Security Info=False;User ID=admin1;Password=Test123#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
     "options": {
       "set-session-context": false
-    }
+    },
+    "schema": "SportsStore"
   },
   "runtime": {
     "rest": {
@@ -58,6 +59,15 @@
     },
     "OrderInfos": {
       "source": "SportsStore.orderinfos",
+      "permissions": [
+        {
+          "actions": ["create", "read", "update", "delete"],
+          "role": "anonymous"
+        }
+      ]
+    },
+    "Carts": {
+      "source": "SportsStore.carts",
       "permissions": [
         {
           "actions": ["create", "read", "update", "delete"],

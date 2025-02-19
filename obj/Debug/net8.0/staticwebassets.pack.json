@@ -145,10 +145,6 @@
       "PackagePath": "staticwebassets\\img\\uploads\\GolfGlove.jpg"
     },
     {
-      "Id": "C:\\Users\\joero\\source\\repos\\BlazorSportStoreAuth\\wwwroot\\img\\uploads\\Save.zip",
-      "PackagePath": "staticwebassets\\img\\uploads\\Save.zip"
-    },
-    {
       "Id": "C:\\Users\\joero\\source\\repos\\BlazorSportStoreAuth\\wwwroot\\img\\uploads\\SoccerBall.jpg",
       "PackagePath": "staticwebassets\\img\\uploads\\SoccerBall.jpg"
     },
@@ -1611,6 +1607,10 @@
     {
       "Id": "C:\\Users\\joero\\source\\repos\\BlazorSportStoreAuth\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "C:\\Users\\joero\\source\\repos\\BlazorSportStoreAuth\\wwwroot\\swa-db-connections\\staticwebapp.database.config.json",
+      "PackagePath": "staticwebassets\\swa-db-connections\\staticwebapp.database.config.json"
     },
     {
       "Id": "C:\\Users\\joero\\source\\repos\\BlazorSportStoreAuth\\wwwroot\\videos\\SportStretched1.mp4",

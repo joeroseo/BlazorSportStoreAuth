@@ -1,3 +1,5 @@
+@inject ApiSettings ApiSettings
+
 @page "/showproducts"
 
 @using Microsoft.AspNetCore.Components.Web
@@ -46,7 +48,8 @@
     private List<Product> products = new();
     private List<Product> filteredProducts = new();
     private HashSet<string> categories = new();
-    private string apiBase = "/rest/Products";
+    private string apiBase = "/data-api/rest/Products";
+    private string fullApiUrl;
 
     private string _category = "";
     private string category
@@ -63,6 +66,10 @@
     {
         try
         {
+            // Ensure the API base URL ends with a slash
+            string baseUrl = ApiSettings.BaseUrl.TrimEnd('/');
+            fullApiUrl = $"{baseUrl}{apiBase}";
+
             await ListProducts();
         }
         catch (Exception ex)
@@ -75,33 +82,18 @@
     {
         try
         {
-            var response = await HttpClient.GetAsync(apiBase);
+            var response = await HttpClient.GetAsync(fullApiUrl);
             string responseBody = await response.Content.ReadAsStringAsync();
             Console.WriteLine($"API Raw Response: {responseBody}");
 
             if (response.IsSuccessStatusCode)
             {
-                if (!response.Content.Headers.ContentType?.MediaType.Contains("application/json") ?? true)
-                {
-                    Console.Error.WriteLine("API did not return JSON. Check API response.");
-                    return;
-                }
-
                 var deserializedResponse = JsonSerializer.Deserialize<Dictionary<string, List<Product>>>(responseBody,
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
                 if (deserializedResponse != null && deserializedResponse.ContainsKey("value"))
                 {
-                    products = deserializedResponse["value"]
-                        .Select(p => new Product
-                            {
-                                id = p.id,
-                                Name = p.Name,
-                                Price = p.Price,
-                                Category = p.Category,
-                                image = p.image,
-                                isAvailable = p.isAvailable
-                            }).ToList();
+                    products = deserializedResponse["value"];
 
                     Console.WriteLine($"Deserialized {products.Count} products.");
 
@@ -152,71 +144,3 @@
         return imagePath.StartsWith("../") ? imagePath.Substring(3) : imagePath;
     }
 }
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        background-color: #f4f4f4;
-    }
-
-    .product-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-        margin: 0 auto;
-        max-width: 1200px;
-    }
-
-    .product-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 250px;
-        padding: 15px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
-    }
-
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-
-    .product-image {
-        width: 100%;
-        height: auto;
-        max-height: 200px;
-        object-fit: contain;
-        margin-bottom: 10px;
-    }
-
-    .product-info {
-        text-align: center;
-    }
-
-    .product-title {
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .product-price {
-        color: green;
-        font-size: 14px;
-    }
-
-    .product-availability {
-        font-size: 12px;
-        color: gray;
-    }
-
-    .btn-primary {
-        font-size: 14px;
-        padding: 5px 10px;
-    }
-</style>

@@ -15,11 +15,9 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 // Define the API Base URL
 //var apiBaseUrl = "http://localhost:5000";
-var apiBaseUrl = "https://mysqlmachine.database.windows.net/";
+var apiBaseUrl = "https://nice-pebble-0d420e91e.4.azurestaticapps.net/"; // Ensure HTTPS
 
 builder.Services.AddSingleton(new ApiSettings { BaseUrl = apiBaseUrl });
-
-// Configure HttpClient to use the base API URL
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(apiBaseUrl) });
 
 builder.Services.AddOidcAuthentication(options =>

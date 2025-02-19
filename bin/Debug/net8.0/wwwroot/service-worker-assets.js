@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "6HIFAmQI",
+  "version": "oJgVN2n2",
   "assets": [
     {
       "hash": "sha256-w7fwYK8reUM3FqeJR820FVuZLdiStSV+ZLv0CRkLEOw=",
@@ -22,11 +22,11 @@ self.assetsManifest = {
       "url": "_framework/Azure.Identity.wasm"
     },
     {
-      "hash": "sha256-OCMGtlROHB0XjIMaQHIgkFd1HxCf01cP8SikEDbPOiI=",
+      "hash": "sha256-nKQLwuDspOETR+aejDcmkfV/qWq8x8swpeicCRhMI+E=",
       "url": "_framework/BlazorSportStoreAuth.pdb"
     },
     {
-      "hash": "sha256-OGh947kcCQIkMF4BV9odCrB2Slo5K4Hg0eoehQf2L6A=",
+      "hash": "sha256-CIIuGkR1g3J36G9BWaeSwURwnCTS7az/qG3MYOFNWRQ=",
       "url": "_framework/BlazorSportStoreAuth.wasm"
     },
     {
@@ -906,7 +906,7 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.wasm"
     },
     {
-      "hash": "sha256-8gggX7Ot7Ve482oGnGXdCDMyz66lDDV1KWaEToniJ/s=",
+      "hash": "sha256-wPXznPKOsOFKRNoIPon1EgFFLEP25paYbw03g93e5z0=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -1092,10 +1092,6 @@ self.assetsManifest = {
     {
       "hash": "sha256-95nhPQdpDdhU0Qg4hePWAkvhT4FFipGqmsrU6nioEXk=",
       "url": "img/uploads/GolfGlove.jpg"
-    },
-    {
-      "hash": "sha256-PHz1VYPC/S1CEYOwjkG/VIDZGlJ2U8HoI0JW3aD7bdQ=",
-      "url": "img/uploads/Save.zip"
     },
     {
       "hash": "sha256-s3DDm7b/N+KTwol1OFha1C5gdBwSyvaghBChOFGUlrY=",
@@ -2560,6 +2556,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-enKgCMkYmCpfEcmg6Annbmc40VZ/A6aYYSQjZfVn2cU=",
       "url": "sample-data/weather.json"
+    },
+    {
+      "hash": "sha256-w50wjYXZU2DduFRoj5MmlO1C369QBhyAQCHYBa9Bx74=",
+      "url": "swa-db-connections/staticwebapp.database.config.json"
     },
     {
       "hash": "sha256-I/Japi0x2CvsnDyGZjy8IAjzjPNG+F54bDrhVdBiWzQ=",

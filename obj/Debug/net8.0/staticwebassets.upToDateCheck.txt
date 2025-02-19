@@ -53,7 +53,6 @@ wwwroot\img\uploads\GolfBag.jpg
 wwwroot\img\uploads\GolfBalls.jpg
 wwwroot\img\uploads\GolfClubs.jpg
 wwwroot\img\uploads\GolfGlove.jpg
-wwwroot\img\uploads\Save.zip
 wwwroot\img\uploads\SoccerBall.jpg
 wwwroot\img\uploads\SoccerCleats.jpg
 wwwroot\img\uploads\SoccerFlags.jpg
@@ -399,6 +398,7 @@ wwwroot\index.html
 wwwroot\manifest.webmanifest
 wwwroot\Processed_Images.zip
 wwwroot\sample-data\weather.json
+wwwroot\swa-db-connections\staticwebapp.database.config.json
 wwwroot\videos\sports.mp4
 wwwroot\videos\Sports5.mp4
 wwwroot\videos\sports-orig.mp4

@@ -25,7 +25,8 @@
       "cors": {
         "allowedOrigins": [
           "https://localhost:7209/",
-          "https://orange-tree-0f689cc1e.4.azurestaticapps.net"
+          "https://orange-tree-0f689cc1e.4.azurestaticapps.net",
+          
         ],
         "methods": ["OPTIONS", "GET", "POST", "PUT", "DELETE"],
         "headers": ["Content-Type", "Authorization"]
@@ -35,15 +36,15 @@
   "routes": [
     {
       "route": "/data-api/rest/{*segments}",
-      "rewrite": "https://nice-pebble-0d420e91e.4.azurestaticapps.net/data-api/rest/{segments}"
+      "rewrite": "https://orange-tree-0f689cc1e.4.azurestaticapps.net/data-api/rest/{segments}"
     },
     {
       "route": "/graphql/{*segments}",
-      "rewrite": "https://nice-pebble-0d420e91e.4.azurestaticapps.net/graphql/{segments}"
+      "rewrite": "https://orange-tree-0f689cc1e.4.azurestaticapps.net/graphql/{segments}"
     },
     {
       "route": "/api/{*segments}",
-      "rewrite": "https://nice-pebble-0d420e91e.4.azurestaticapps.net/api/{segments}"
+      "rewrite": "https://orange-tree-0f689cc1e.4.azurestaticapps.net/api/{segments}"
     }
   ],
   "navigationFallback": {

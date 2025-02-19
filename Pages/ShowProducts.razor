@@ -49,7 +49,8 @@
     private List<Product> filteredProducts = new();
     private HashSet<string> categories = new();
     private string apiBase = "/data-api/rest/Products";
-    private string fullApiUrl;
+    private string fullApiUrl = "https://orange-tree-0f689cc1e.4.azurestaticapps.net/data-api/rest/Products";
+
 
     private string _category = "";
     private string category
@@ -69,6 +70,7 @@
             // Ensure the API base URL ends with a slash
             string baseUrl = ApiSettings.BaseUrl.TrimEnd('/');
             fullApiUrl = $"{baseUrl}{apiBase}";
+
 
             await ListProducts();
         }

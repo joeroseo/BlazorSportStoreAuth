@@ -11,82 +11,71 @@
 @inject IJSRuntime JS
 
 @using System.Text.Json
+<h3>Products</h3>
 
-<div class="container mt-4">
-    <h4>Products</h4>
-
-    <!-- Category Dropdown Menu -->
-    <div class="mb-3">
-        <label for="category" class="form-label">Category</label>
-        <select id="category" class="form-select" style="width: 15ch;" @bind="category">
-            <option value="" selected>All</option>
-            @foreach (var cat in categories)
-            {
-                <option value="@cat">@cat</option>
-            }
-        </select>
-    </div>
-
-    <!-- Flexbox Wrapper -->
-    <div class="product-container">
-        @foreach (var product in filteredProducts)
+<!-- Category Dropdown -->
+<div>
+    <label for="category">Category:</label>
+    <select id="category" @bind="category">
+        <option value="">All</option>
+        @foreach (var cat in categories)
         {
-            <div class="product-card">
-                <img src="@GetImageUrl(product.image)" class="product-image" alt="@product.Name">
-                <div class="product-info">
-                    <h6 class="product-title">@product.Name</h6>
-                    <p class="product-price">@product.Price.ToString("C2")</p>
-                    <p class="product-availability">Available: @(product.isAvailable ? "Yes" : "No")</p>
-                    <button class="btn btn-primary btn-sm" @onclick="() => AddProductToCart(product)">Add to Cart</button>
-                </div>
-            </div>
+            <option value="@cat">@cat</option>
         }
-    </div>
+    </select>
+</div>
+
+<!-- Product List -->
+<div class="product-container">
+    @foreach (var product in filteredProducts)
+    {
+        <div class="product-card">
+            <img src="@GetImageUrl(product.image)" alt="@product.Name">
+            <h5>@product.Name</h5>
+            <p>@product.Price.ToString("C2")</p>
+            <button @onclick="() => AddToCart(product)">Add to Cart</button>
+        </div>
+    }
 </div>
 
 @code {
     private List<Product> products = new();
     private List<Product> filteredProducts = new();
     private HashSet<string> categories = new();
-    private string apiBase = "/data-api/rest/Products";
-    private string fullApiUrl = "https://orange-tree-0f689cc1e.4.azurestaticapps.net/data-api/rest/Products";
-
-
-    private string _category = "";
-    private string category
-    {
-        get => _category;
-        set
-        {
-            _category = value;
-            FilterProducts();
-        }
-    }
+    private string category = "";
+    private string apiBase = "";
+    private string fullApiUrl = "";
 
     protected override async Task OnInitializedAsync()
     {
+        await LoadApiSettings();
+        fullApiUrl = $"{apiBase}/data-api/rest/Products";
+        Console.WriteLine($"Using API URL: {fullApiUrl}");
+        await FetchProducts();
+    }
+
+    private async Task LoadApiSettings()
+    {
         try
         {
-            // Ensure the API base URL ends with a slash
-            string baseUrl = ApiSettings.BaseUrl.TrimEnd('/');
-            fullApiUrl = $"{baseUrl}{apiBase}";
-
-
-            await ListProducts();
+            var response = await HttpClient.GetAsync("appsettings.json");
+            var config = await response.Content.ReadAsStringAsync();
+            var jsonDoc = JsonDocument.Parse(config);
+            apiBase = jsonDoc.RootElement.GetProperty("ApiBaseUrl").GetString();
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error initializing ShowProducts component: {ex.Message}");
+            Console.WriteLine($"Error loading API settings: {ex.Message}");
         }
     }
 
-    private async Task ListProducts()
+    private async Task FetchProducts()
     {
         try
         {
             var response = await HttpClient.GetAsync(fullApiUrl);
-            string responseBody = await response.Content.ReadAsStringAsync();
-            Console.WriteLine($"API Raw Response: {responseBody}");
+            var responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"API Response: {responseBody}");
 
             if (response.IsSuccessStatusCode)
             {
@@ -96,9 +85,6 @@
                 if (deserializedResponse != null && deserializedResponse.ContainsKey("value"))
                 {
                     products = deserializedResponse["value"];
-
-                    Console.WriteLine($"Deserialized {products.Count} products.");
-
                     categories = products.Select(p => p.Category).Where(c => !string.IsNullOrEmpty(c)).ToHashSet();
                     FilterProducts();
                 }
@@ -126,23 +112,15 @@
         StateHasChanged();
     }
 
-    void AddProductToCart(Product product)
+    private void AddToCart(Product product)
     {
-        CartService.AddToCart(product);
-        UpdateCartCount();
-    }
-
-    async void UpdateCartCount()
-    {
-        int cartCount = CartService.GetCartTotalQuantity();
-        await JS.InvokeVoidAsync("updateCartCount", cartCount);
+        Console.WriteLine($"Added {product.Name} to cart.");
+        // Implement cart logic
     }
 
     private string GetImageUrl(string imagePath)
     {
-        if (string.IsNullOrWhiteSpace(imagePath))
-            return "/img/default.jpg";
-
-        return imagePath.StartsWith("../") ? imagePath.Substring(3) : imagePath;
+        return string.IsNullOrWhiteSpace(imagePath) ? "/img/default.jpg" : imagePath;
     }
+    
 }

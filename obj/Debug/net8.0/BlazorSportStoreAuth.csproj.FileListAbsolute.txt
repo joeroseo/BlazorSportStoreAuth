@@ -1193,7 +1193,6 @@ C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebasset
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlazorSportStoreAuth.props
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlazorSportStoreAuth.props
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSp.5F1C69D3.Up2Date
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSportStoreAuth.dll
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\refint\BlazorSportStoreAuth.dll
@@ -1201,6 +1200,7 @@ C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSportSto
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\ref\BlazorSportStoreAuth.dll
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSportStoreAuth.sourcelink.json
 C:\Users\joero\source\repos\BlazorSportStoreAuth\bin\Debug\net8.0\staticwebapp.database.config.json
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\t8u1ly7gw3-3hwomrf2vt.gz
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\hznh1kd0wd-ooky7buthz.gz
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\h5ckw10ez0-8yq33nr8ij.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\t8u1ly7gw3-xsj8zz3cr2.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\hznh1kd0wd-ztbywk41ib.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\h5ckw10ez0-szpkw3rf0n.gz

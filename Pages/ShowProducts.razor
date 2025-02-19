@@ -43,30 +43,14 @@
     private List<Product> filteredProducts = new();
     private HashSet<string> categories = new();
     private string category = "";
-    private string apiBase = "";
-    private string fullApiUrl = "";
+    private string apiBaseUrl = "https://orange-tree-0f689cc1e.4.azurestaticapps.net/";
+    private string fullApiUrl;
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadApiSettings();
-        fullApiUrl = $"{apiBase}/data-api/rest/Products";
+        fullApiUrl = $"{apiBaseUrl}/data-api/rest/Products";
         Console.WriteLine($"Using API URL: {fullApiUrl}");
         await FetchProducts();
-    }
-
-    private async Task LoadApiSettings()
-    {
-        try
-        {
-            var response = await HttpClient.GetAsync("appsettings.json");
-            var config = await response.Content.ReadAsStringAsync();
-            var jsonDoc = JsonDocument.Parse(config);
-            apiBase = jsonDoc.RootElement.GetProperty("ApiBaseUrl").GetString();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error loading API settings: {ex.Message}");
-        }
     }
 
     private async Task FetchProducts()
@@ -122,5 +106,4 @@
     {
         return string.IsNullOrWhiteSpace(imagePath) ? "/img/default.jpg" : imagePath;
     }
-    
 }

@@ -19,13 +19,13 @@
     },
     "host": {
       "mode": "production",
-      "routes": [
-        {
-          "route": "/data-api/rest/Products",
-          "methods": ["OPTIONS", "GET", "POST", "PUT", "DELETE"],
-          "allowedRoles": ["anonymous"]
-        }
-      ],
+{
+  "routes": [
+    {
+      "route": "/data-api/*",
+      "rewrite": "/.oryx/data-api/"
+    }
+  ],
       "cors": {
         "allow-credentials": true,
         "origins": ["*"],

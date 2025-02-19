@@ -37,6 +37,10 @@
           "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "AddProductOrderInfo.razor",
@@ -46,8 +50,7 @@
               "RelativeToolTip": "Pages\\AddProductOrderInfo.razor",
               "ViewState": "AgIAAK4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-19T11:20:22.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T11:20:22.479Z"
             },
             {
               "$type": "Document",
@@ -59,8 +62,7 @@
               "RelativeToolTip": "Models\\ProductOrderInfo.cs",
               "ViewState": "AgIAACYAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T11:02:30.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T11:02:30.561Z"
             },
             {
               "$type": "Document",
@@ -72,12 +74,7 @@
               "RelativeToolTip": "Models\\ProductOrderItems.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T10:57:54.276Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "WhenOpened": "2025-02-19T10:57:54.276Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Services\\ProductOrderInfoManager.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T23:07:24.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T23:07:24.838Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "Services\\ProductOrderItemsManager.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAIwEAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T23:06:42.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T23:06:42.488Z"
             }
           ]
         }

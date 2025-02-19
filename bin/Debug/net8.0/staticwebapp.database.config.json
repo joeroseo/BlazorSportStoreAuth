@@ -27,7 +27,7 @@
     }
   ],
   "cors": {
-    "allowedOrigins": ["https://localhost:7201"],
+    "allowedOrigins": ["https://localhost:7134"],
     "methods": ["OPTIONS", "GET", "POST", "PUT", "DELETE"],
     "headers": ["Content-Type", "Authorization"]
   },

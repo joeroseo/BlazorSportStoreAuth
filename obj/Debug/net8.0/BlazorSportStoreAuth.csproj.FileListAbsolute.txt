@@ -1200,6 +1200,7 @@ C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\refint\BlazorS
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSportStoreAuth.pdb
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\ref\BlazorSportStoreAuth.dll
 C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\BlazorSportStoreAuth.sourcelink.json
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\t8u1ly7gw3-cr34ms17n9.gz
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\hznh1kd0wd-4uazzsd3xi.gz
-C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\h5ckw10ez0-o6liq0eequ.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\bin\Debug\net8.0\staticwebapp.database.config.json
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\t8u1ly7gw3-q3948eixy9.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\hznh1kd0wd-ly841ftvil.gz
+C:\Users\joero\source\repos\BlazorSportStoreAuth\obj\Debug\net8.0\compressed\h5ckw10ez0-0yf1p6gdn0.gz
